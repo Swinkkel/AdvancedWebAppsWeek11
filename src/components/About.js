@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
 
 const About = () => {
   const [items, setSomeStuff] = useState([]);
@@ -24,7 +23,6 @@ const About = () => {
 
   return (
     <div>
-      <Header />
       <h2>About Page</h2>
       <ul>
         {items.map(item => (
