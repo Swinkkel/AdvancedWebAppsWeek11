@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
-  const [items, setSomeStuff] = useState([]);
+    const {t} = useTranslation();
+    const [items, setSomeStuff] = useState([]);
 
   useEffect(() => {
     let mounted = true;
@@ -23,7 +25,7 @@ const About = () => {
 
   return (
     <div>
-      <h2>About Page</h2>
+      <h2>{t('about')}</h2>
       <ul>
         {items.map(item => (
           <li key={item.id}>{item.title}</li>

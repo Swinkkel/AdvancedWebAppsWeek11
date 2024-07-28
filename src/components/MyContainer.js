@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import MyList from './MyList'
+import MyList from './MyList';
+import {useTranslation} from 'react-i18next';
 
 function MyContainer() {
+    const { t } = useTranslation();
+
     const [items, setItems] = useState([
         {id: "1", text: "item 1", clicked: false},
         {id: "2", text: "item 2", clicked: false}
@@ -27,7 +30,7 @@ function MyContainer() {
 
     return (
         <div>
-            <h1>My Container</h1>
+            <h1>{t('homePage')}</h1>
             <textarea value = {newItemText} onChange={(e) => setNewItemText(e.target.value)} placeholder='Enter new item text ' />
             <button onClick={addItem}>Add Item</button>
             <MyList header = "My List" items={items} onItemClick={updateItem} />
